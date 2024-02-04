@@ -2,9 +2,14 @@
 #Bank tranfer
 #Author: Fatima
 
-#(in cent): 65
-#(in cent): 180
+#a = 65 (in cent)
+#b = 180 (in cent)
+#https://realpython.com/lessons/floating-point-numbers-python/
+
+a= float(.65) 
+b= float(1.80)
 
 
-sum = (65 + 180)
-print(f" The sum of this is: €{sum}. ")
+sum = (a + b)
+
+print(f" The sum of these is: €{sum}. ")
