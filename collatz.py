@@ -12,10 +12,10 @@
 def collatz(a):
     while a != 1:
         yield a # "yield" funcion will make the "a" repeat itself but with the new number obtained. This will continue until the sequence it's over when it reaches 1 as defined below.
-        if a % 2 == 0:
-            a = a // 2
+        if a % 2 == 0: # Even number
+            a = a // 2 
         else: 
-            a = 3 * a + 1
+            a = 3 * a + 1 # Odd number
     yield 1 # yield finishes when the number is 1
 
 a = int(input("Please enter a positive integer: "))
