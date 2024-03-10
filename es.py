@@ -35,10 +35,9 @@ print(letterFrequency(FILENAME, 'e')) # call the function and display the letter
     ## ERROR - NO ARGUMENT
 FILENAME2 = "moby-dick2.txt" 
 
-#f = open(FILENAME2, "rt")
-#print(f.read())
-#print(f.read(size=-1))
-#f.close()
+f = open(FILENAME2, "rt")
+print(f.read())
+f.close()
 # There's no argument, nothing will be printed out because there's nothing written in text file.
 
 
