@@ -3,8 +3,6 @@
 # I will also show how to deal with errors such as no argument, non existing files and opening files that are not txt files.
 # Author: Faitima Oliveira
 
-# I will donwload the Moby Dick book as TXT file from the followig URL: https://www.gutenberg.org/files/2701/old/moby10b.txt
-# https://realpython.com/python-download-file-from-url/#using-urllib-from-the-standard-library
 
 from urllib.request import urlretrieve
 url = (
@@ -12,13 +10,15 @@ url = (
 )
 FILENAME = "moby-dick.txt"
 urlretrieve(url, FILENAME)
+# It will donwload the Moby Dick book as txt file from the URL mentioned above.
+# https://realpython.com/python-download-file-from-url/#using-urllib-from-the-standard-library
 
-# MAIN
 def letterFrequency(FILENAME, letter):
     f = open(FILENAME, 'r')
-    text = f.read() # store content of the file in a variable
+    text = f.read()
     return text.count(letter)
-print(letterFrequency(FILENAME, 'e')) # call the function and display the letter count
+print(letterFrequency(FILENAME, 'e')) 
+# It will read the txt file and display the count of the letter "e".
 # https://realpython.com/python-command-line-arguments/#file-handling
 # https://www.w3schools.com/python/gloss_python_function_arguments.asp
 # https://www.geeksforgeeks.org/count-the-number-of-times-a-letter-appears-in-a-text-file-in-python/
@@ -48,7 +48,7 @@ f = open(FILENAME3, "rt")
 print(f.read())
 f.close()
 '''
-# Will give error because moby-dick3.txt doesn't exist, so it can't read it.
+# It will give an error because moby-dick3.txt doesn't exist, so it can't read it.
 # https://www.w3schools.com/python/python_file_handling.asp
 
     ## ERROR - IS NOT A TXT FILE
@@ -71,7 +71,7 @@ f.close()
 # https://www.w3schools.com/python/python_file_handling.asp
 # https://www.tutorialsteacher.com/python/python-read-write-file
 
-# We can show images through Python command. There's many ways to do it, and Pillow library is one of them.
+# There's more proper ways to show images through Python command. We can do it in many ways, and Pillow library is one of them.
 # https://realpython.com/image-processing-with-the-python-pillow-library/
 '''
 from PIL import Image
