@@ -4,7 +4,7 @@
 # Author: Faitima Oliveira
 
 # A txt file needs to exist in order to Python read and count the number of e's of a file. 
-# The following code will create a new txt file so we can run main program.
+# The following code will create a new txt file so we can run MAIN program.
 FILENAME = "moby-dick.txt"
 with open(FILENAME, "w") as f: # The "w" will create a new file with name "moby-dick.txt". 
     f.write("116960\n")
@@ -20,18 +20,25 @@ my_function(FILENAME)
 # https://www.w3schools.com/python/gloss_python_function_arguments.asp
 
 # MAIN
-x = FILENAME.count("e") # Code will show how many e's there is in the file.
-print(x)
-# https://www.w3schools.com/python/ref_string_count.asp
+def letterFrequency(FILENAME, letter):
+    f = open(FILENAME, 'r')
+    text = f.read() # store content of the file in a variable
+    return text.count(letter)
+print(letterFrequency(FILENAME, 'e')) # call the function and display the letter count
+
+# https://www.geeksforgeeks.org/count-the-number-of-times-a-letter-appears-in-a-text-file-in-python/
+# https://realpython.com/python-counter/#putting-counter-into-action
+
 #-------------------------------------------------------------------------------------------------------------------------------------
 
 
     ## ERROR - NO ARGUMENT
 FILENAME2 = "moby-dick2.txt" 
 
-f = open(FILENAME2, "rt")
-print(f.read())
-f.close()
+#f = open(FILENAME2, "rt")
+#print(f.read())
+#print(f.read(size=-1))
+#f.close()
 # There's no argument, nothing will be printed out because there's nothing written in text file.
 
 
