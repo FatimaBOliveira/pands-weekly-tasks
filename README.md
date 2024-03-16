@@ -75,12 +75,42 @@ else:
     print("It is the weekend, yay!")
 ```
 ## Week 6 - [squareroot.py](squareroot.py)
-- Program that will check a positive floating number and will show the square root, using the Newton method.
+- Program that will check a positive floating number and will show the an approximation of its square root, using the Newton's Method.
 
+For this task I will ask the user to input a positive number, as negative numbers don't have square roots. The Newton's Method calculation to get the [square root](https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/) is: root = 0.5 * (x + (number/x)). To get x, I need to multiply the number inputted by 0.5. I use a [while loop](https://www.w3schools.com/python/python_while_loops.asp), so the function runs only when the condition is true. Then for the final answer, I [return](https://realpython.com/python-return-statement/) the root to close the loop and then I request the machine to print the number that was square rooted and the result of it, [rounded](https://www.w3schools.com/python/ref_func_round.asp) in 1 decimal point.
+```
+number = float(input("Please enter a positive number: "))
+x = 0.5 * number
+def sqrt (number, x):
+    root = 0.5 * (x + (number/x))
+    while root!=x:
+        x=root
+        root = 0.5 * (x + (number/x))
+    return root
+
+print(f"The square root of {number} is approx. {round(sqrt(number, x), 1)}.") 
+```
 ## week 7 - [es.py](es.py)
-- Program that will download the Moby Dick book through the internet and counts the number os e's that it contains.
+- Program that will download the Moby Dick book through the internet and counts the number of e's that it contains.
 
-## Week 8 - [plottask.py]
+In this task, I searched in Google for the Moby Dick book as [txt](https://www.gutenberg.org/files/2701/old/moby10b.txt) file, and I use the [urllib](https://realpython.com/python-download-file-from-url/#using-urllib-from-the-standard-library) package to download it in the program. Then I request the machine to read the txt file with the [file handling](https://realpython.com/python-command-line-arguments/#file-handling) function, and then [return](https://www.geeksforgeeks.org/count-the-number-of-times-a-letter-appears-in-a-text-file-in-python/) how many times the letter "e" appears on the file.
+```
+from urllib.request import urlretrieve
+url = (
+    "https://www.gutenberg.org/files/2701/old/moby10b.txt"
+)
+FILENAME = "moby-dick.txt"
+urlretrieve(url, FILENAME)
+
+def letterFrequency(FILENAME, letter):
+    f = open(FILENAME, 'r')
+    text = f.read()
+    return text.count(letter)
+print(letterFrequency(FILENAME, 'e')) 
+```
+[Inside](es.py) of this weekly task I also show how to handle with errors such as no argument, non existing files and opening files that are not txt files.
+
+## Week 8 - [plottask.py](plottask.py)
 - Program that plots a histogram with normal distribution and a function.
 
 The task is to show a histogram with normal distribution of 1000 values with the mean of 5 and deviation of 2 and plot function h(x)= x^3 with range between 0 and 10, both represented in one set of axes. I need to divide this task in 2 parts, one with the histogram and other with the funtion:
@@ -95,7 +125,7 @@ x = np.arange(0,11)
 y = x * x * x
 plt.plot(x, y, label ="x cubed", color = "red")
 ```
-3. To add [title](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.title.html), [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html) and name of [axes] (https://www.w3schools.com/python/matplotlib_labels.asp), I used the following:
+3. To add [title](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.title.html), [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html) and name of [axes](https://www.w3schools.com/python/matplotlib_labels.asp), I used the following:
 ```
 plt.legend()
 plt.title("Histagram of normal distribution and x cubed")

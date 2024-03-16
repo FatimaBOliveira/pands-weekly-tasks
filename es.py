@@ -48,7 +48,7 @@ f = open(FILENAME3, "rt")
 print(f.read())
 f.close()
 '''
-# It will give an error because moby-dick3.txt doesn't exist, so it can't read it.
+# It will give an error because moby-dick3.txt doesn't exist, so it can't read it. If the file doesn't exist and I want to create one, I can use "w", "a" or "x".
 # https://www.w3schools.com/python/python_file_handling.asp
 
     ## ERROR - IS NOT A TXT FILE
@@ -71,11 +71,11 @@ f.close()
 # https://www.w3schools.com/python/python_file_handling.asp
 # https://www.tutorialsteacher.com/python/python-read-write-file
 
-# There's more proper ways to show images through Python command. We can do it in many ways, and Pillow library is one of them.
+# There's better ways to show images through Python command. We can do it in many ways, and Pillow library is one of them.
 # https://realpython.com/image-processing-with-the-python-pillow-library/
 '''
 from PIL import Image
 with Image.open(FILENAME4) as img:
     img.show() 
 '''
-# This will open the image in a program that shows images like Photos app, depending on the computer.
+# This will open the image in a program that shows images like Photos app, depending on the apps that are installed in the computer.
