@@ -1,22 +1,29 @@
 # Programming and Scripting: Weekly Tasks
 
+To write this README, I considered the [Github](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes) details regarding README files, what it should contain.
+
 ## What the project does
-The purpose of this repository is to answer the weekly tasks proposed in the Module Programming and Scripting of the Course Data Analytics in ATU Galway Mayo.
+
+The purpose of this repository is to answer the weekly tasks proposed in the Module Programming and Scripting of the Course Data Analytics in [ATU Galway Mayo](https://www.gmit.ie/).
 
 ## Why the project is useful
+
 Every week, the weekly tasks helped me to put into practice the contents learned and my ability to search information in reliable sources to resolve the problems raised.
 
 ## How users can get started with the project
-To run this weekly tasks, Anaconda and Visual Studio Code need to be installed to run these programs.
 
+To run this weekly tasks, [Anaconda](https://www.anaconda.com/) and [Visual Studio Code](https://code.visualstudio.com/) need to be installed to run these programs.
 
 ## Where users can get help with your project
-If there's any issues with the programs, please contact me in the issues link in my Github.
 
-## Author:
+If there's any issues with the programs, please contact me in the [issues](https://github.com/FatimaBOliveira/My-Data-Analytics-Project/issues) link in my repository.
 
-**By Fatima Oliveira**
+## Author
+
+Fatima Oliveira
+Email:g00438857@atu.ie or Fatima.21.00@hotmail.com
 ***********************************************************************************
+
 ## Week 1 - [helloworld.py](helloworld.py)
 - Simple program that prints Hello World!
 
@@ -97,7 +104,7 @@ else:
 ## Week 6 - [squareroot.py](squareroot.py)
 - Program that will check a positive floating number and will show the an approximation of its square root, using the Newton's Method.
 
-For this task I will ask the user to input a positive number, as negative numbers don't have square roots. The Newton's Method calculation to get the [square root](https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/) is: root = 0.5 * (x + (number/x)). To get x, I need to multiply the number inputted by 0.5. I use a [while loop](https://www.w3schools.com/python/python_while_loops.asp), so the function runs only when the condition is true. Then for the final answer, I [return](https://realpython.com/python-return-statement/) the root to close the loop and then I request the machine to print the number that was square rooted and the result of it, [rounded](https://www.w3schools.com/python/ref_func_round.asp) in 1 decimal point.
+For this task I will ask the user to input a positive number, as negative numbers don't have square roots. The Newton's Method calculation to get the [square root](https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/) is: root = 0.5 * (x + (number/x)). To get x, I need to multiply the number inputted by 0.5. I use a [while loop](https://www.w3schools.com/python/python_while_loops.asp), so the function runs only when the condition is true. Then I [return](https://realpython.com/python-return-statement/) the root to close the loop, and for the final answer I request the machine to print the number that was square rooted and the result of it [rounded](https://www.w3schools.com/python/ref_func_round.asp) in 1 decimal point.
 ```
 number = float(input("Please enter a positive number: "))
 x = 0.5 * number
@@ -113,7 +120,7 @@ print(f"The square root of {number} is approx. {round(sqrt(number, x), 1)}.")
 ## week 7 - [es.py](es.py)
 - Program that will download the Moby Dick book through the internet and counts the number of e's that it contains.
 
-In this task, I searched in Google for the Moby Dick book as [txt](https://www.gutenberg.org/files/2701/old/moby10b.txt) file, and I use the [urllib](https://realpython.com/python-download-file-from-url/#using-urllib-from-the-standard-library) package to download it in the program. Then I request the machine to read the txt file with the [file handling](https://realpython.com/python-command-line-arguments/#file-handling) function, and then [return](https://www.geeksforgeeks.org/count-the-number-of-times-a-letter-appears-in-a-text-file-in-python/) how many times the letter "e" appears on the file.
+In this task, I searched in Google for the Moby Dick book as [txt](https://www.gutenberg.org/files/2701/old/moby10b.txt) file, and I use the [urllib](https://realpython.com/python-download-file-from-url/#using-urllib-from-the-standard-library) package to load it in the program. Then I request the machine to read the txt file with the [file handling](https://realpython.com/python-command-line-arguments/#file-handling) function, and then [return](https://www.geeksforgeeks.org/count-the-number-of-times-a-letter-appears-in-a-text-file-in-python/) the letter counts and then print the argument but specifying how many times the letter "e" appears on the file.
 ```
 from urllib.request import urlretrieve
 url = (
@@ -133,7 +140,7 @@ print(letterFrequency(FILENAME, 'e'))
 ## Week 8 - [plottask.py](plottask.py)
 - Program that plots a histogram with normal distribution and a function.
 
-The task is to show a histogram with normal distribution of 1000 values with the mean of 5 and deviation of 2 and plot function h(x)= x^3 with range between 0 and 10, both represented in one set of axes. I need to divide this task in 2 parts, one with the histogram and other with the funtion:
+The task is to show a histogram with normal distribution of 1000 values with the mean of 5 and deviation of 2 and plot function h(x)= x^3 with range between 0 and 10, both represented in one set of axes. For this I need to divide this task in 2 parts, one with the histogram and other with the function:
 
 To get the histogram, I need to use [numpy random normal function](https://www.w3schools.com/python/numpy/numpy_random_normal.asp), and then only use the [plot.hist function](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html).
 ```
@@ -146,7 +153,7 @@ x = np.arange(0,11)
 y = x * x * x
 plt.plot(x, y, label ="x cubed", color = "red")
 ```
-To add [title](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.title.html), [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html) and name of [axes](https://www.w3schools.com/python/matplotlib_labels.asp), I used the following code below, and then finally I plot both together.
+To add [title](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.title.html), [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html) and name of [axes](https://www.w3schools.com/python/matplotlib_labels.asp), I use the code below, and finally I plot both together with [plt.show()](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.show.html).
 ```
 plt.legend()
 plt.title("Histagram of normal distribution and x cubed")
@@ -154,5 +161,5 @@ plt.xlabel("X")
 plt.ylabel("Y")
 plt.show()
 ```
-***********************************************************************
+***
 ## End
