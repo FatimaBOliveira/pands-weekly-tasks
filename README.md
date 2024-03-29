@@ -1,6 +1,19 @@
 # Programming and Scripting: Weekly Tasks
 
-The purpose of this repository is to answer the weekly tasks proposed in the Module Programming and Scripting of the Course Data Analytics in the University of ATU Galway Mayo.
+## What the project does
+The purpose of this repository is to answer the weekly tasks proposed in the Module Programming and Scripting of the Course Data Analytics in ATU Galway Mayo.
+
+## Why the project is useful
+Every week, the weekly tasks helped me to put into practice the contents learned and my ability to search information in reliable sources to resolve the problems raised.
+
+## How users can get started with the project
+To run this weekly tasks, Anaconda and Visual Studio Code need to be installed to run these programs.
+
+
+## Where users can get help with your project
+If there's any issues with the programs, please contact me in the issues link in my Github.
+
+## Author:
 
 **By Fatima Oliveira**
 ***********************************************************************************
@@ -11,14 +24,21 @@ Print function is enough to run any sentence:
 ```
 print("Hello World!")
 ```
+Or I can use a variable with a string to print it:
+```
+a = "Hello World!"
+print(a)
+```
 ## Week 2 - [bank.py](bank.py)
 - Bank is a program that will do the sum of two amounts in cents and read it in euros.
 
-Input function for the user to put the any amount in cents. Then I need to calculate, adding the amounts and divide it by 100, so I can get the amouny in euros. To get the final answer, I need to print the result of the calculation and to print the euro sign we can use the [chr()](https://docs.python.org/3/library/functions.html#chr) function.
+Input int function for the user prompt any amount in cents. I raise a Value Error in case that the user input negative numbers so I can only sum amounts and not subtract them. Then I need to calculate the sum, by adding the amounts and divide it by 100, so I can get the amount in euros. To get the final answer, I need to print the result of the calculation and to print the euro sign I can use the [chr()](https://docs.python.org/3/library/functions.html#chr) function.
 ```
 a = (int(input("Enter amount1(in cent): ")))
 b = (int(input("Enter amount2(in cent): ")))
-sum = ((a + b) / 100) 
+if a<0 or b<0:
+    raise ValueError ("The amount has to be positive")
+sum = ((a + b) / 100)
 print(f" The sum of these is: {chr(8364)}{sum}.")
 ```
 ## Week 3 - [accounts.py](accounts.py)
@@ -40,8 +60,9 @@ print (f"{a}{accountnumberB}")
 ## Week 4 - [collatz.py](collatz.py)
 - Collatz will take an integer and if this is even, it will divide it by two, but if odd, it will multiply it by three and add one. The program will end if the current value is one.
 
-For this task I need to define the Collatz. The while a !=1 -> [yield](https://docs.python.org/3/reference/expressions.html#yieldexpr) a will process all numbers that are higher than 1 and yield 1 will stop the function. So if a is higher than 1 and even, then I can divide it by 2 and the remainder will be zero; if remainder is not zero, then a is odd and machine will do the calculations as represented in each case. I use a [for loop](https://wiki.python.org/moin/ForLoop) because the program has to run n times until a = 1.
+For this task I need to define the Collatz. The while a !=1 -> [yield](https://docs.python.org/3/reference/expressions.html#yieldexpr) a will process all numbers that are higher than 1 and yield 1 will stop the function. So if a is higher than 1 and even, then I can divide it by 2 and the remainder will be zero, if remainder is not zero, then a is odd and machine will do the calculations as represented in each case. I use a [for loop](https://wiki.python.org/moin/ForLoop) because the program has to run many times as necessary until a = 1.
 ```
+a = int(input("Please enter a positive integer: "))
 def collatz(a):
     while a != 1:
         yield a 
@@ -50,14 +71,13 @@ def collatz(a):
         else: 
             a = 3 * a + 1
     yield 1
-a = int(input("Please enter a positive integer: "))
 for sequence in collatz(a):
     print(sequence, end=" ")
 ```
 ## Week 5 - [weekday.py](weekday.py)
 - Machine will check and tell the user if today is a weekday or weekend.
 
-I need to import the module [datetime](https://realpython.com/python-datetime/#using-the-python-datetime-module) and then I define today with [date.today()](https://docs.python.org/3/library/datetime.html#datetime.date.today) to allow machine to know the current date. The function [date.weekday()](https://docs.python.org/3/library/datetime.html#datetime.date.weekday) will process today's date and check which day of the week it is, then it will return a value from 0 to 6, 0 being a Monday and 6 a Sunday. I will use the print function for the machine to tell me that is weekday if value is between 0 and 4 and weekend if value is 5 or 6.
+I need to import date from the module [datetime](https://realpython.com/python-datetime/#using-the-python-datetime-module) and then apply [date.today()](https://docs.python.org/3/library/datetime.html#datetime.date.today) to allow machine to know the current date. The function [date.weekday()](https://docs.python.org/3/library/datetime.html#datetime.date.weekday) will process today's date, then it will return a value from 0 to 6, 0 correspondent to Monday and 6 a Sunday. The machine will check which [condition](https://www.w3schools.com/python/python_conditions.asp) is valid and print the condition that is true.
 ```
 from datetime import date 
 today = date.today()
@@ -114,27 +134,25 @@ print(letterFrequency(FILENAME, 'e'))
 - Program that plots a histogram with normal distribution and a function.
 
 The task is to show a histogram with normal distribution of 1000 values with the mean of 5 and deviation of 2 and plot function h(x)= x^3 with range between 0 and 10, both represented in one set of axes. I need to divide this task in 2 parts, one with the histogram and other with the funtion:
-1. To get the histogram, I need to use [numpy random normal function](https://www.w3schools.com/python/numpy/numpy_random_normal.asp), and then only use the [plot.hist function](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html).
+
+To get the histogram, I need to use [numpy random normal function](https://www.w3schools.com/python/numpy/numpy_random_normal.asp), and then only use the [plot.hist function](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html).
 ```
 normaldist = np.random.normal(loc=5, scale = 2, size=1000)
 plt.hist(normaldist, label = "Histagram", edgecolor="black")
 ```
-2. For the function h(x)=x^3 with range between 0 and 10, I use the [numpy arange function](https://realpython.com/how-to-use-numpy-arange/#return-value-and-parameters-of-nparange). I identify h(x) as y because python won't accept the writing form of h(x) as a [variable](https://www.w3schools.com/python/python_variables_names.asp), so I will call it y instead. So y is equal to x cubed so X multiplied by itself and then itself again. Then to represent, I only use the [plt.plot function](https://www.w3schools.com/python/matplotlib_plotting.asp).
+For the function h(x)=x^3 with range between 0 and 10, I use the [numpy arange function](https://realpython.com/how-to-use-numpy-arange/#return-value-and-parameters-of-nparange). I identify h(x) as y because python won't accept the writing form of h(x) as a [variable](https://www.w3schools.com/python/python_variables_names.asp), so I will call it y instead. So y is equal to x cubed so X multiplied by itself and then itself again. Then to represent, I only use the [plt.plot function](https://www.w3schools.com/python/matplotlib_plotting.asp).
 ```
 x = np.arange(0,11) 
 y = x * x * x
 plt.plot(x, y, label ="x cubed", color = "red")
 ```
-3. To add [title](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.title.html), [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html) and name of [axes](https://www.w3schools.com/python/matplotlib_labels.asp), I used the following:
+To add [title](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.title.html), [legend](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html) and name of [axes](https://www.w3schools.com/python/matplotlib_labels.asp), I used the following code below, and then finally I plot both together.
 ```
 plt.legend()
 plt.title("Histagram of normal distribution and x cubed")
 plt.xlabel("X")
 plt.ylabel("Y")
-```
-4. And finally to plot both together:
-```
 plt.show()
 ```
 ***********************************************************************
-# End
+## End
