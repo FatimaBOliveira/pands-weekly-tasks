@@ -18,9 +18,9 @@ urlretrieve(url, FILENAME)
 # https://www.w3schools.com/python/gloss_python_function_arguments.asp
 # https://realpython.com/python-command-line-arguments/#file-handling
 def letterFrequency(FILENAME, letter):
-    f = open(FILENAME, 'r')  # r will read the txt file
+    f = open(FILENAME, 'r')  # "r" will read the txt file.
     text = f.read()
-    return text.count(letter) # return the letter counts.
+    return text.count(letter) # Return the letter counts.
 print(letterFrequency(FILENAME, 'e')) # "e" is the letter to be counted for this task.
 # https://www.geeksforgeeks.org/count-the-number-of-times-a-letter-appears-in-a-text-file-in-python/
 # https://realpython.com/python-counter/#putting-counter-into-action

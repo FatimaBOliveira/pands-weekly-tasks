@@ -10,7 +10,7 @@ number = float(input("Please enter a positive number: "))
 # https://www.geeksforgeeks.org/find-root-of-a-number-using-newtons-method/
 x = 0.5 * number
 def sqrt (number, x):
-    root = 0.5 * (x + (number/x)) # this is the Newton method to get the square root. 
+    root = 0.5 * (x + (number/x)) # This is the Newton method to get the square root. 
     while root!=x: # While function will run as long the condition is true, root not equal to x. 
         x=root
         root = 0.5 * (x + (number/x))
@@ -18,5 +18,5 @@ def sqrt (number, x):
 # https://www.w3schools.com/python/python_while_loops.asp
 # https://realpython.com/python-return-statement/
 
-print(f"The square root of {number} is approx. {round(sqrt(number, x), 1)}.") # round function to get square root with 1 decimal.
+print(f"The square root of {number} is approx. {round(sqrt(number, x), 1)}.") # Round function to get square root with 1 decimal.
 # https://www.w3schools.com/python/ref_func_round.asp
